@@ -10,13 +10,13 @@ export const newClaim = async (req, res) => {
       });
     }
 
-    // const product = await Data.findOne({ productID });
+    const product = await Data.findOne({ productID });
 
-    // if (product) {
-    //   return res.status(400).json({
-    //     error: "Product exist, please go Existing Claims Page",
-    //   });
-    // }
+    if (product) {
+      return res.status(400).json({
+        error: "Product exist, please go Existing Claims Page",
+      });
+    }
 
     const newData = new Data({
       claimantName,

@@ -1,0 +1,31 @@
+.body {
+  width: 50%;
+  padding: 12px;
+}
+.body > div {
+  margin-bottom: 18px;
+}
+.body > div > label {
+  display: block;
+  font-size: large;
+  margin-bottom: 8px;
+}
+.body > div > label::after {
+  content: "  *";
+  color: red;
+}
+.body > div > input,
+.body > div > textarea {
+  width: 100%;
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 8px;
+}
+.buttonContainer {
+  border: 1px solid black;
+  transition: all 0.3s ease-in-out;
+}
+.buttonContainer:hover {
+  background: #fff;
+  color: black;
+}

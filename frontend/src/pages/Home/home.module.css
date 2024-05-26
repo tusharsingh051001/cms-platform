@@ -1,0 +1,14 @@
+.linkContainer > a {
+  color: blue;
+  text-decoration: underline;
+  transition: all 0.2s ease-in-out;
+}
+.linkContainer > a:focus {
+  color: red;
+}
+.linkContainer > a:visited {
+  color: blue;
+}
+.linkContainer > a:hover {
+  color: black;
+}

@@ -1,0 +1,9 @@
+.body > svg {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.body > svg:hover {
+  transform: scale(1.1);
+}
