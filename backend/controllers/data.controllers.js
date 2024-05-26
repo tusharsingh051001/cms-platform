@@ -45,3 +45,38 @@ export const newClaim = async (req, res) => {
     });
   }
 };
+
+export const updateClaim = async (req, res) => {
+  try {
+    const { claimType, claimDesc } = req.body;
+    const { id: productID } = req.params;
+
+    const product = await Data.findOne({ productID });
+
+    if (!product) {
+      throw new Error("Product not found!! Enter correct ID.");
+    }
+
+    product.claimType = claimType;
+    product.claimDesc = claimDesc;
+
+    await product.save();
+
+    res.status(200).json({
+      message: "Product Updated Successfully!!",
+      Product: {
+        _id: product._id,
+        claimantName: product.claimantName,
+        productID: product.productID,
+        claimType: product.claimType,
+        claimDesc: product.claimDesc,
+        claimStatus: product.claimStatus,
+      },
+    });
+  } catch (error) {
+    console.log("ERROR IN UPDATE CLAIM: ", error.message);
+    res.status(500).json({
+      error: "internal Server Error",
+    });
+  }
+};

@@ -1,3 +1,3 @@
-import { newClaim } from "./data.controllers.js";
+import { newClaim, updateClaim } from "./data.controllers.js";
 
-export { newClaim };
+export { newClaim, updateClaim };
