@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { newClaim, updateClaim } from "../controllers/!controllersExport.js";
+import { newClaim, updateClaim} from "../controllers/!controllersExport.js";
 
 const router = Router();
 
@@ -9,4 +9,7 @@ router.post("/new", newClaim);
 // });
 router.patch("/existing/:id", updateClaim);
 
+//router.get("/existing", getClaim);
+
+//router.delete
 export default router;
