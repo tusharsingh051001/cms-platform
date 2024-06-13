@@ -3,7 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Home, NewClaim, ExistingClaim } from "./pages/!pagesExports.js";
+import {
+  Home,
+  NewClaim,
+  ExistingClaim,
+  GetClaim,
+  DeleteClaim,
+} from "./pages/!pagesExports.js";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: "/existing-claim",
         element: <ExistingClaim />,
+      },
+      {
+        path: "/view-claim",
+        element: <GetClaim />,
+      },
+      {
+        path: "/delete-claim",
+        element: <DeleteClaim />,
       },
     ],
   },
