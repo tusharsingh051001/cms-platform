@@ -80,3 +80,57 @@ export const updateClaim = async (req, res) => {
     });
   }
 };
+
+export const getClaim = async (req, res) => {
+  try {
+    const { id: productID } = req.params;
+
+    const product = await Data.findOne({ productID });
+
+    if (!product) {
+      throw new Error("Product not found. Enter correct ID!!");
+    }
+
+    res.status(200).json({
+      message: "Product data retrieved Successfully.",
+      Product: {
+        _id: product._id,
+        claimantName: product.claimantName,
+        productID: product.productID,
+        claimType: product.claimType,
+        claimDesc: product.claimDesc,
+        claimStatus: product.claimStatus,
+        createdAt: product.createdAt,
+        updatedAt: product.updatedAt,
+      },
+    });
+  } catch (error) {
+    console.log("ERROR IN GET CLAIM: ", error.message);
+    res.status(500).json({
+      error: "internal Server Error",
+    });
+  }
+};
+
+export const deleteClaim = async (req, res) => {
+  try {
+    const { id: productID } = req.params;
+
+    const product = await Data.findOne({ productID });
+
+    if (!product) {
+      throw new Error("Product not found. Enter correct ID!!");
+    }
+
+    await product.deleteOne({ productID });
+
+    res.status(200).json({
+      message: "Product has been deletd successfully",
+    });
+  } catch (error) {
+    console.log("ERROR IN DELETE CLAIM: ", error.message);
+    res.status(500).json({
+      error: "internal Server Error",
+    });
+  }
+};
