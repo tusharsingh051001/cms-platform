@@ -1,4 +1,5 @@
 import { Router } from "express";
+
 import {
   newClaim,
   updateClaim,
@@ -16,4 +17,7 @@ router.patch("/existing/:id", updateClaim);
 router.get("/view/:id", getClaim);
 router.delete("/delete/:id", deleteClaim);
 
+//router.get("/existing", getClaim);
+
+//router.delete
 export default router;
