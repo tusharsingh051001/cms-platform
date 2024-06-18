@@ -81,6 +81,7 @@ export const updateClaim = async (req, res) => {
   }
 };
 
+//error handling
 export const getClaim = async (req, res) => {
   try {
     const { id: productID } = req.params;
