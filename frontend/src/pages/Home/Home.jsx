@@ -11,8 +11,16 @@ const Home = () => {
           <Link to={"/new-claim"}>New Claim</Link>
         </div>
         <div className={`mb-4 ${styles.linkContainer}`}>
-          If you want to update your Existing Claim 👉:{" "}
+          If you want to <u>update</u> your Existing Claim 👉:{" "}
           <Link to={"/existing-claim"}>Existing Claim</Link>
+        </div>
+        <div className={`mb-4 ${styles.linkContainer}`}>
+          If you want to <u>view</u> your Existing Claim 👉:{" "}
+          <Link to={"/view-claim"}>View Claim</Link>
+        </div>
+        <div className={`mb-4 ${styles.linkContainer}`}>
+          If you want to <u>delete</u> your Existing Claim 👉:{" "}
+          <Link to={"/delete-claim"}>Delete Claim</Link>
         </div>
       </div>
     </div>

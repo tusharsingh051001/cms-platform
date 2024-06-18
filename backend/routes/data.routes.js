@@ -1,5 +1,11 @@
 import { Router } from "express";
-import { newClaim, updateClaim} from "../controllers/!controllersExport.js";
+
+import {
+  newClaim,
+  updateClaim,
+  getClaim,
+  deleteClaim,
+} from "../controllers/!controllersExport.js";
 
 const router = Router();
 
@@ -8,6 +14,8 @@ router.post("/new", newClaim);
 //   res.send("This is /api/data/new");
 // });
 router.patch("/existing/:id", updateClaim);
+router.get("/view/:id", getClaim);
+router.delete("/delete/:id", deleteClaim);
 
 //router.get("/existing", getClaim);
 
